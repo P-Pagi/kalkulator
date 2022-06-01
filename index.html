@@ -63,7 +63,7 @@
                 document.getElementById('angka2').disabled = false;
                 if (aritmatika == tambah) {
                     let nama = document.getElementById('nama').innerText = value = 'Tambah';
-                    if (inputSatu ^ inputDua != null) {
+                    if (inputSatu || inputDua != null) {
                         let totalTambah = inputSatu + inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalTambah;
                         return
@@ -75,7 +75,7 @@
 
                 if (aritmatika == kurang) {
                     let nama = document.getElementById('nama').innerText = value = 'Kurang';
-                    if (inputSatu ^ inputDua != null) {
+                    if (inputSatu || inputDua != null) {
                         let totalKurang = inputSatu - inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalKurang;
                         return
@@ -86,7 +86,7 @@
 
                 if (aritmatika == kali) {
                     let nama = document.getElementById('nama').innerText = value = 'Kali';
-                    if (inputSatu ^ inputDua != null) {
+                    if (inputSatu || inputDua != null) {
                         let = totalKali = inputSatu * inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalKali;
                         return
@@ -97,7 +97,7 @@
 
                 if (aritmatika == bagi) {
                     let nama = document.getElementById('nama').innerText = value = 'Bagi';
-                    if (inputSatu ^ inputDua != null) {
+                    if (inputSatu || inputDua != null) {
                         let totalBagi = inputSatu / inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalBagi;
                         return
