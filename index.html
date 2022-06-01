@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Portofolio</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col bg-neutral-800 text-white p-10" style="height: 100vh;">
+                <h1 class="text-xl mb-5">Kalkulator</h1>
+                <p id="nama">Pilih Action</p>
+                <div class="row columns-">
+                    <div class="col">
+                        <input type="text" class="m-2 text-center text-black w-auto" disabled name=""
+                            placeholder="Angka Pertama" id="angka1" onkeyup="operasi()">
+                    </div>
+                    <div class="col">
+                        <select name="" id="aritmatika" onclick="operasi()" class="text-center bg-neutral-800">
+                            <option value="" id="action" active>Action</option>
+                            <option id="tambah">+</option>
+                            <option id="kurang">-</option>
+                            <option id="kali">*</option>
+                            <option id="bagi">/</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="" class="m-2 text-center text-black min-w-min" disabled
+                            placeholder="Angka Kedua" id="angka2" onkeyup="operasi()">
+                    </div>
+                </div>
+                <br>
+                Hasil : <a id="hasil">0</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const operasi = () => {
+            let inputSatu = +document.getElementById('angka1').value;
+            let inputDua = +document.getElementById('angka2').value;
+            let aritmatika = document.getElementById('aritmatika').value;
+            let tambah = document.getElementById('tambah').value;
+            let kurang = document.getElementById('kurang').value;
+            let kali = document.getElementById('kali').value;
+            let bagi = document.getElementById('bagi').value;
+            let action = document.getElementById('action').value;
+
+            if (aritmatika != action) {
+                document.getElementById('angka1').disabled = false;
+                document.getElementById('angka2').disabled = false;
+                if (aritmatika == tambah) {
+                    let nama = document.getElementById('nama').innerText = value = 'Tambah';
+                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                        let totalTambah = inputSatu + inputDua;
+                        let hasil = document.getElementById('hasil').innerText = value = totalTambah;
+                        return
+                    } else {
+                        let hasil = document.getElementById('hasil').innerText = value = "0";
+                    }
+
+                };
+
+                if (aritmatika == kurang) {
+                    let nama = document.getElementById('nama').innerText = value = 'Kurang';
+                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                        let totalKurang = inputSatu - inputDua;
+                        let hasil = document.getElementById('hasil').innerText = value = totalKurang;
+                        return
+                    } else {
+                        let hasil = document.getElementById('hasil').innerText = value = "0";
+                    }
+                };
+
+                if (aritmatika == kali) {
+                    let nama = document.getElementById('nama').innerText = value = 'Kali';
+                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                        let = totalKali = inputSatu * inputDua;
+                        let hasil = document.getElementById('hasil').innerText = value = totalKali;
+                        return
+                    } else {
+                        let hasil = document.getElementById('hasil').innerText = value = "0";
+                    }
+                };
+
+                if (aritmatika == bagi) {
+                    let nama = document.getElementById('nama').innerText = value = 'Bagi';
+                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                        let totalBagi = inputSatu / inputDua;
+                        let hasil = document.getElementById('hasil').innerText = value = totalBagi;
+                        return
+                    } else {
+                        let hasil = document.getElementById('hasil').innerText = value = "0";
+                    }
+                };
+            } else {
+                document.getElementById('angka1').value = null;
+                document.getElementById('angka2').value = null;
+                document.getElementById('angka1').disabled = true;
+                document.getElementById('angka2').disabled = true;
+                document.getElementById('hasil').innerText = value = "0";
+                let nama = document.getElementById('nama').innerText = value = 'Pilih Action';
+
+            }
+        }
+    </script>
+</body>
+
+</html>
