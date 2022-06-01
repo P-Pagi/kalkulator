@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
     <title>Portofolio</title>
 </head>
 
@@ -17,8 +24,9 @@
                 <p id="nama">Pilih Action</p>
                 <div class="row columns-">
                     <div class="col">
-                        <input type="number" class="m-2 text-center text-black w-auto" disabled name=""
-                            placeholder="Angka Pertama" id="angka1" onkeyup="operasi()">
+                        <input type="number"
+                            class="m-2 text-center block text-black w-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                            disabled name="" placeholder="Angka Pertama" id="angka1" onkeyup="operasi()">
                     </div>
                     <div class="col">
                         <select name="" id="aritmatika" onchange="operasi()" class="text-center bg-neutral-800">
@@ -55,7 +63,7 @@
                 document.getElementById('angka2').disabled = false;
                 if (aritmatika == tambah) {
                     let nama = document.getElementById('nama').innerText = value = 'Tambah';
-                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                    if (inputSatu ^ inputDua != null) {
                         let totalTambah = inputSatu + inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalTambah;
                         return
@@ -67,7 +75,7 @@
 
                 if (aritmatika == kurang) {
                     let nama = document.getElementById('nama').innerText = value = 'Kurang';
-                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                    if (inputSatu ^ inputDua != null) {
                         let totalKurang = inputSatu - inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalKurang;
                         return
@@ -78,7 +86,7 @@
 
                 if (aritmatika == kali) {
                     let nama = document.getElementById('nama').innerText = value = 'Kali';
-                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                    if (inputSatu ^ inputDua != null) {
                         let = totalKali = inputSatu * inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalKali;
                         return
@@ -89,7 +97,7 @@
 
                 if (aritmatika == bagi) {
                     let nama = document.getElementById('nama').innerText = value = 'Bagi';
-                    if (inputSatu && inputDua == inputDua && inputSatu != null) {
+                    if (inputSatu ^ inputDua != null) {
                         let totalBagi = inputSatu / inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalBagi;
                         return
