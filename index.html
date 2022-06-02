@@ -5,52 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-    </style>
-    <title>Portofolio</title>
+    <link rel="stylesheet" href="layout.css">
+    <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col bg-neutral-800 text-white p-10 text-center justify-items-center" style="height: 100vh;">
-                <div class="kotak" style="width: 100%; background-color: #222;">
-                    <div class="posisi" style="padding: 5%;">
-                        <h1 class="text-xl mb-5">Kalkulator</h1>
-                        <p id="nama">Pilih Action</p>
-                        <div class="row">
-                            <div class="col">
-                                <input type="number"
-                                    class="m-2 text-center text-black min-w-min border border-slate-300 rounded-md py-1 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-                                    disabled name="" placeholder="Angka Pertama" id="angka1" onkeyup="operasi()">
-                            </div>
-                            <div class="col">
-                                <select name="" id="aritmatika" onchange="operasi()" class="text-center bg-neutral-800">
-                                    <option value="" id="action" active>Action</option>
-                                    <option id="tambah">+</option>
-                                    <option id="kurang">-</option>
-                                    <option id="kali">*</option>
-                                    <option id="bagi">/</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <input type="number" name=""
-                                    class="m-2 text-center text-black min-w-min border border-slate-300 rounded-md py-1 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-                                    disabled placeholder="Angka Kedua" id="angka2" onkeyup="operasi()">
-                            </div>
-                            Hasil : <a id="hasil">0</a>
-                        </div>
-                    </div>
+        <div class="helper">
+            <div class="main">
+                <div>
+                    <h1>Kalkulator</h1>
+                </div>
+                <div class="content">
+                    <input type="number" disabled name="" placeholder="Angka Pertama" id="angka1" onkeyup="operasi()">
+                    <select name="" id="aritmatika" onchange="operasi()">
+                        <option value="" id="action" active>Action</option>
+                        <option id="tambah">+</option>
+                        <option id="kurang">-</option>
+                        <option id="kali">*</option>
+                        <option id="bagi">/</option>
+                    </select>
+                    <input type="number" disabled name="" placeholder="Angka Pertama" id="angka2" onkeyup="operasi()">
+                    <a>Hasil : <span id="hasil">0</span></a>
                 </div>
             </div>
         </div>
     </div>
+
     <script>
         const operasi = () => {
             let inputSatu = +document.getElementById('angka1').value;
@@ -66,7 +47,6 @@
                 document.getElementById('angka1').disabled = false;
                 document.getElementById('angka2').disabled = false;
                 if (aritmatika == tambah) {
-                    let nama = document.getElementById('nama').innerText = value = 'Tambah';
                     if (inputSatu || inputDua != null) {
                         let totalTambah = inputSatu + inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalTambah;
@@ -78,7 +58,6 @@
                 };
 
                 if (aritmatika == kurang) {
-                    let nama = document.getElementById('nama').innerText = value = 'Kurang';
                     if (inputSatu || inputDua != null) {
                         let totalKurang = inputSatu - inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalKurang;
@@ -89,7 +68,6 @@
                 };
 
                 if (aritmatika == kali) {
-                    let nama = document.getElementById('nama').innerText = value = 'Kali';
                     if (inputSatu || inputDua != null) {
                         let = totalKali = inputSatu * inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalKali;
@@ -100,7 +78,6 @@
                 };
 
                 if (aritmatika == bagi) {
-                    let nama = document.getElementById('nama').innerText = value = 'Bagi';
                     if (inputSatu || inputDua != null) {
                         let totalBagi = inputSatu / inputDua;
                         let hasil = document.getElementById('hasil').innerText = value = totalBagi;
@@ -115,7 +92,6 @@
                 document.getElementById('angka1').disabled = true;
                 document.getElementById('angka2').disabled = true;
                 document.getElementById('hasil').innerText = value = "0";
-                let nama = document.getElementById('nama').innerText = value = 'Pilih Action';
 
             }
         }
