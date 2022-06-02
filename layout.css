@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+@import url(https://allfont.net/allfont.css?fonts=comic-sans-ms);
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -8,7 +8,7 @@ input::-webkit-inner-spin-button {
 
 * {
     box-sizing: border-box;
-    font-family: cursive;
+    font-family: 'Comic Sans MS', arial;
 }
 
 body {
